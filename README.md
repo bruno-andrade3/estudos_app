@@ -19,7 +19,7 @@ Um app web simples feito com Streamlit + SQLite para registrar, visualizar e aco
 bash
 Copiar
 Editar
-git clone https://github.com/SEU_USUARIO/estudos_app.git
+git clone https://github.com/bruno-andrade3/estudos_app.git
 cd estudos_app
 2. Instale as dependências:
 bash
