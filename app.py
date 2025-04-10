@@ -64,8 +64,18 @@ if menu == "Inserir":
 
     # COLUNA 1 - Dados básicos do estudo
     with col1:
-        data = st.date_input("Data", datetime.today())  # Seletor de data (padrão: hoje)
-        hora = st.time_input("Hora", time(0, 0))  # Seletor de hora (padrão: 00:00)
+        # Checkbox para usar a data e hora atual
+        usar_agora = st.checkbox("Usar Agora", value=False)
+
+        # Define data e hora com base no checkbox
+        if usar_agora:
+            now = datetime.now()
+            data = st.date_input("Data", now.date(), disabled=True)
+            hora = st.time_input("Hora", now.time().replace(microsecond=0), disabled=True)
+        else:
+            data = st.date_input("Data", datetime.today())
+            hora = st.time_input("Hora", time(0, 0))
+
         materia = st.text_input("Matéria")  # Campo de texto para matéria estudada
     
     # COLUNA 2 - Metadados do estudo
